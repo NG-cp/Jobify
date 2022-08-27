@@ -1,6 +1,7 @@
 import main from '../assets/images/main-alternative.svg';
 import Wrapper from '../assets/wrappers/LandingPage';
 import {Logo} from '../components/index';
+import { Link } from 'react-router-dom';
 
 const Landing = () => {
     return(
@@ -16,7 +17,7 @@ const Landing = () => {
                     <p>
                         I'm baby thundercats selfies pug portland, raw denim poutine air plant literally. Biodiesel knausgaard hoodie, leggings brunch sriracha flannel direct trade neutra vape try-hard cloud bread truffaut prism. Listicle DIY ethical godard artisan neutra taiyaki intelligentsia man braid dreamcatcher. Same fashion axe cold-pressed direct trade.
                     </p>
-                    <button className='btn btn-hero'>Login/Register</button>
+                    <Link to='/register' className='btn btn-hero'>Login/Register</Link>
                 </div>
                 {/* Use https://undraw.co to get illustrations */}
                 <img src={main} alt='job-hunt' className='img main-img' />
