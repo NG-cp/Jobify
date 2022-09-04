@@ -5,6 +5,7 @@ import dotenv from "dotenv"
 dotenv.config();
 
 import 'express-async-errors';
+import morgan from 'morgan';
 
 import connectDB from "./database/connect.js";
 
@@ -14,10 +15,16 @@ import jobsRouter from "./routes/jobsRouter.js";
 import notFoundMiddleware from "./middleware/not-found.js";
 import errorHandlerMiddleware from "./middleware/error-handler.js";
 
+if(process.env.NODE_ENV !== 'production') {
+    app.use(morgan('dev'));
+}
 app.use(express.json());
 
 app.get('/',(req,res)=>{
     res.send("Welcome to Jobify");
+});
+app.get('/api/v1/',(req,res)=>{
+    res.send("API");
 });
 
 app.use('/api/v1/auth/',authRouter);
